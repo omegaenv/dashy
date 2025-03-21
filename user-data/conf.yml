@@ -1,47 +1,273 @@
----
-# Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
+  title: Home Lab
+  description: Omegaenv Lab Dashboard
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
-
-# Optional app settings and configuration
+    - title: Documentation
+      path: ''
+      target: newtab
+  logo: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
 appConfig:
-  theme: colorful
-
-# Main content - An array of sections, each containing an array of items
+  theme: glass
+  layout: auto
+  iconSize: medium
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+  - name: PVE Nodes
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PVE01
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+        url: https://192.168.29.10:8006
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_772_pve
+      - title: PVE02
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+        url: https://192.168.29.20:8006
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_772_pve
+  - name: Cosmos Nodes
+    icon: https://cosmos-cloud.io/Logo.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Cosmos-Pve01
+        icon: https://cosmos-cloud.io/Logo.png
+        url: https://192.168.29.82
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_1165_cosmospve
+      - title: Cosmos-Pve02
+        icon: https://cosmos-cloud.io/Logo.png
+        url: https://192.168.29.112
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_1165_cosmospve
+  - name: Automation
+    icon: https://img.icons8.com/?size=100&id=HndM7CIuKrqG&format=png&color=000000
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Semaphore
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/semaphore.png
+        url: https://192.168.29.112:7200/
+        statusCheckAllowInsecure: true
+        statusCheck: true
+        id: 0_1057_semaphore
+      - title: Dockge
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dockge.png
+        url: http://192.168.29.112:5001/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_1057_dockge
+      - title: Kestra
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kestra.png
+        url: http://192.168.29.112:3001/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 2_1057_kestra
+  - name: Portainer
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PVE01
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+        url: https://192.168.29.82:7201/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_948_pve
+      - title: PVE02
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+        url: https://192.168.29.112:7201/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_948_pve
+  - name: Storage
+    icon: https://img.icons8.com/?size=100&id=x22BXJ8IEoLJ&format=png&color=000000
+    displayData:
+      sortBy: default
+      rows: 1
+/app/user-data # cat conf.yml 
+pageInfo:
+  title: Home Lab
+  description: Omegaenv Lab Dashboard
+  navLinks:
+    - title: Documentation
+      path: ''
+      target: newtab
+  logo: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+appConfig:
+  theme: glass
+  layout: auto
+  iconSize: medium
+sections:
+  - name: PVE Nodes
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PVE01
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+        url: https://192.168.29.10:8006
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_772_pve
+      - title: PVE02
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+        url: https://192.168.29.20:8006
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_772_pve
+  - name: Cosmos Nodes
+    icon: https://cosmos-cloud.io/Logo.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Cosmos-Pve01
+        icon: https://cosmos-cloud.io/Logo.png
+        url: https://192.168.29.82
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_1165_cosmospve
+      - title: Cosmos-Pve02
+        icon: https://cosmos-cloud.io/Logo.png
+        url: https://192.168.29.112
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_1165_cosmospve
+  - name: Automation
+    icon: https://img.icons8.com/?size=100&id=HndM7CIuKrqG&format=png&color=000000
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Semaphore
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/semaphore.png
+        url: https://192.168.29.112:7200/
+        statusCheckAllowInsecure: true
+        statusCheck: true
+        id: 0_1057_semaphore
+      - title: Dockge
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dockge.png
+        url: http://192.168.29.112:5001/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_1057_dockge
+      - title: Kestra
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kestra.png
+        url: http://192.168.29.112:3001/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 2_1057_kestra
+  - name: Portainer
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PVE01
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+        url: https://192.168.29.82:7201/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_948_pve
+      - title: PVE02
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/portainer.png
+        url: https://192.168.29.112:7201/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_948_pve
+  - name: Storage
+    icon: https://img.icons8.com/?size=100&id=x22BXJ8IEoLJ&format=png&color=000000
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items: []
+  - name: Code Server
+    icon: >-
+      https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/coder-light.png
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PVE02
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/coder-light.png
+        url: http://192.168.29.112:8443/
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 0_1042_pve
+      - title: Omega Thin Client
+        icon: >-
+          https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/coder-light.png
+        url: https://192.168.29.249:8443
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
+        id: 1_1042_omegathinclient
