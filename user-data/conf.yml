@@ -12,6 +12,11 @@ appConfig:
   layout: auto
   iconSize: medium
 sections:
+ - name: Omega Thin Client
+    widgets:
+      - type: gl-ip-address
+        options:
+          hostname: http://192.168.29.112:61208/
   - name: PVE Nodes
     icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
     displayData:
